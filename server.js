@@ -1,15 +1,10 @@
-const express = require('express');
 const dotenv = require('dotenv');
+const connectDB = require('./src/config/db');
 
 dotenv.config();
+connectDB();
 
-const app = express();
-
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.send('Zomansta backend is running 🚀');
-});
+const app = require('./src/app');
 
 const PORT = process.env.PORT || 5000;
 
