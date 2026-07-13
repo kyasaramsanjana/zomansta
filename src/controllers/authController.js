@@ -8,7 +8,6 @@ const register = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error('Please fill all fields');
   }
-
   const user = await registerUser(name, email, password);
 
   res.status(201).json({
