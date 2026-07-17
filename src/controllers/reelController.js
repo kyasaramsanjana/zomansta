@@ -9,7 +9,6 @@ const {
 } = require('../services/reelService');
 const uploadReel = asyncHandler(async (req, res) => {
   const { title, description, videoUrl, thumbnail, restaurant, tags } = req.body;
-
   if (!title || !videoUrl || !restaurant) {
     res.status(400);
     throw new Error('Title, videoUrl and restaurant are required');
