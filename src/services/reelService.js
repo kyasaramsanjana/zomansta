@@ -1,5 +1,4 @@
 const Reel = require('../models/Reel');
-
 const createReel = async (data) => {
   const reel = await Reel.create(data);
   return reel;
