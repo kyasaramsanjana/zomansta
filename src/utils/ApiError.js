@@ -5,7 +5,6 @@ class ApiError extends Error {
     this.message = message;
     this.success = false;
     this.errors = errors;
-
     if (stack) {
       this.stack = stack;
     } else {
@@ -13,5 +12,4 @@ class ApiError extends Error {
     }
   }
 }
-
 module.exports = ApiError;
