@@ -50,7 +50,6 @@ const removeReel = asyncHandler(async (req, res) => {
   const result = await deleteReel(req.params.id, req.user._id.toString());
   res.status(200).json({ success: true, data: result });
 });
-
 module.exports = {
   uploadReel,
   getReels,
