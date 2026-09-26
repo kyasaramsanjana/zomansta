@@ -6,7 +6,6 @@ const {
   updateRestaurant
 } = require('../services/restaurantService');
 
-// @route POST /api/restaurants
 const addRestaurant = asyncHandler(async (req, res) => {
   const { name, description, location, cuisine, isVeg } = req.body;
 
@@ -27,19 +26,16 @@ const addRestaurant = asyncHandler(async (req, res) => {
   res.status(201).json({ success: true, data: restaurant });
 });
 
-// @route GET /api/restaurants
 const getRestaurants = asyncHandler(async (req, res) => {
   const restaurants = await getAllRestaurants();
   res.status(200).json({ success: true, data: restaurants });
 });
 
-// @route GET /api/restaurants/:id
 const getRestaurant = asyncHandler(async (req, res) => {
   const restaurant = await getRestaurantById(req.params.id);
   res.status(200).json({ success: true, data: restaurant });
 });
 
-// @route PUT /api/restaurants/:id
 const editRestaurant = asyncHandler(async (req, res) => {
   const restaurant = await updateRestaurant(
     req.params.id,
